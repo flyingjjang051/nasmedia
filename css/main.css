@@ -1,5 +1,5 @@
 .link {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   display: inline-block;
   position: relative;
@@ -9,6 +9,7 @@
 .link .txt {
   position: relative;
   z-index: 2;
+  vertical-align: middle;
 }
 .link i {
   content: "";
@@ -21,10 +22,13 @@
   top: 50%;
   left: 30px;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 .link .material-icons {
   position: absolute;
   right: 15px;
+  vertical-align: middle;
+  top: -4px;
 }
 
 #main {
