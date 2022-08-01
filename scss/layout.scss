@@ -28,8 +28,11 @@ a {
         position: absolute;
         height: 30px;
         transition: all 0.25s ease;
-        &.color {
+        &.white {
           opacity: 0;
+        }
+        &.color {
+          opacity: 1;
         }
       }
     }
@@ -69,6 +72,18 @@ a {
 }
 .black {
   #header {
+    #logo {
+      a {
+        img {
+          &.color {
+            opacity: 0;
+          }
+          &.white {
+            opacity: 1;
+          }
+        }
+      }
+    }
     #gnb {
       color: #fff;
     }

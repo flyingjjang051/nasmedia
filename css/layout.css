@@ -33,8 +33,11 @@ a {
   height: 30px;
   transition: all 0.25s ease;
 }
-#header #logo a img.color {
+#header #logo a img.white {
   opacity: 0;
+}
+#header #logo a img.color {
+  opacity: 1;
 }
 #header #gnb {
   color: #000;
@@ -67,6 +70,12 @@ a {
   transition: all 0.2s ease-in-out;
 }
 
+.black #header #logo a img.color {
+  opacity: 0;
+}
+.black #header #logo a img.white {
+  opacity: 1;
+}
 .black #header #gnb {
   color: #fff;
 }

@@ -29,6 +29,7 @@
     <script src="../js/swiper-bundle.min.js"></script>
     <script src="../js/splitting.min.js"></script>
     <script src="../js/greensock/gsap.min.js"></script>
+    <script src="../js/greensock/CSSRulePlugin.min.js"></script>
   </head>
   <body class="black">
     <header id="header">
@@ -78,7 +79,18 @@
                     Our Value, <br />
                     Goal and Vision
                   </h2>
-                  <a href="">회사소개 바로가기 </a>
+                  <a href="" class="link">
+                    <i></i>
+                    <span class="txt">회사소개 바로가기</span>
+                  </a>
+                  <a href="" class="link">
+                    <i></i>
+                    <span class="txt">회사 고기사 맥주도 사 소개 바로가기</span>
+                  </a>
+                  <a href="" class="link">
+                    <i></i>
+                    <span class="txt">나스리포트 바로가기</span>
+                  </a>
                 </div>
                 <ul class="list">
                   <li>
@@ -173,6 +185,34 @@
         }
         console.log(this);
       }
+
+      $(".link").each(function () {
+        // 만약 각각의 길이나 높이등등이 다를때는 each를 통해
+        // 개별 요소로 접근을 해야 한다.
+        const end = $(this).innerWidth();
+        const linkTL = gsap.timeline({ paused: true });
+        const ball = $(this).find("i");
+        linkTL
+          .to(ball, {
+            left: 30,
+            width: end,
+            ease: "power4",
+            duration: 0.35,
+          })
+          .to(ball, {
+            left: end,
+            width: 50,
+            ease: "power4",
+            duration: 0.35,
+          });
+
+        $(this).on("mouseenter", function () {
+          linkTL.play();
+        });
+        $(this).on("mouseleave", function () {
+          linkTL.reverse();
+        });
+      });
     </script>
   </body>
 </html>
