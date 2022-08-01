@@ -95,12 +95,21 @@
           </div>
         </section>
       </div>
+      <div class="pagination"></div>
     </main>
     <script>
+      const toolTips = ["Main", "Our Value", "What We Do", "Nas Report", "Let,s go Together", ""];
       new Swiper("#main", {
         direction: "vertical",
         speed: 1000,
         parallax: true,
+        pagination: {
+          el: "#main .pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return `<span class="${className}"><span class="tooltip">${toolTips[index]}</span></span>`;
+          },
+        },
         mousewheel: {
           //invert: true,
         },

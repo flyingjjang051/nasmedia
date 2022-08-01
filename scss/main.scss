@@ -49,3 +49,42 @@
 #footer .inner {
   background-color: #000;
 }
+
+#main .pagination {
+  position: fixed;
+  right: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  .swiper-pagination-bullet {
+    margin: 20px 0;
+    opacity: 1;
+    position: relative;
+    &:hover .tooltip {
+      opacity: 1;
+    }
+    .tooltip {
+      white-space: nowrap;
+      position: absolute;
+      right: 20px;
+      padding: 15px 30px;
+      background-color: #fff;
+      color: #000;
+      border-radius: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      opacity: 0;
+      transition: all 0.25s ease;
+    }
+    &-active {
+      background-color: $red;
+      .tooltip {
+        background-color: $red;
+        color: #fff;
+      }
+    }
+  }
+}
