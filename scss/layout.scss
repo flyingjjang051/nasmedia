@@ -35,7 +35,8 @@ a {
     }
   }
   #gnb {
-    color: #fff;
+    color: #000;
+    transition: all 0.25s ease;
     ul {
       display: flex;
       li {
@@ -60,6 +61,57 @@ a {
             top: 10px;
             opacity: 0;
             transition: all 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+.black {
+  #header {
+    #gnb {
+      color: #fff;
+    }
+  }
+  #main {
+    .pagination {
+      .swiper-pagination-bullet {
+        background-color: #fff;
+        color: #fff;
+        .tooltip {
+          background-color: #fff;
+          color: #000;
+        }
+        &-active {
+          background-color: $red;
+          .tooltip {
+            background-color: $red;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+.red {
+  #header {
+    #gnb {
+      color: #fff;
+    }
+  }
+  #main {
+    .pagination {
+      .swiper-pagination-bullet {
+        background-color: #000;
+        .tooltip {
+          background-color: #fff;
+          color: #000;
+        }
+        &-active {
+          background-color: #fff;
+          .tooltip {
+            background-color: #fff;
+            color: #000;
           }
         }
       }

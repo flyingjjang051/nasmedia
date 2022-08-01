@@ -30,7 +30,7 @@
     <script src="../js/splitting.min.js"></script>
     <script src="../js/greensock/gsap.min.js"></script>
   </head>
-  <body>
+  <body class="black">
     <header id="header">
       <h1 id="logo">
         <a href="">
@@ -57,7 +57,7 @@
         <span></span>
       </button>
     </header>
-    <main id="main">
+    <main id="main" class="black">
       <div class="swiper-wrapper">
         <section class="section swiper-slide" id="introduce">
           <div class="inner" data-swiper-parallax-scale="0.75">
@@ -98,8 +98,9 @@
       <div class="pagination"></div>
     </main>
     <script>
+      let currentIndex = 0;
       const toolTips = ["Main", "Our Value", "What We Do", "Nas Report", "Let,s go Together", ""];
-      new Swiper("#main", {
+      const mainSlider = new Swiper("#main", {
         direction: "vertical",
         speed: 1000,
         parallax: true,
@@ -113,7 +114,34 @@
         mousewheel: {
           //invert: true,
         },
+        on: {
+          slideChange: function () {
+            //console.log(this.realIndex);
+            // 올라갈때랑 내려갈때 다르다.
+            if (this.realIndex > currentIndex) {
+              console.log("내려감");
+              setTimeout(classChange, 850);
+            } else {
+              console.log("올라감");
+              setTimeout(classChange, 200);
+            }
+          },
+          slideChangeTransitionEnd: function () {
+            currentIndex = this.realIndex;
+          },
+        },
       });
+      function classChange() {
+        if (mainSlider.realIndex === 0 || mainSlider.realIndex === 2) {
+          $("body").addClass("black");
+        } else if (mainSlider.realIndex === 4) {
+          $("body").addClass("red");
+        } else {
+          $("body").removeClass("black");
+          $("body").removeClass("red");
+        }
+        console.log(this);
+      }
     </script>
   </body>
 </html>

@@ -37,7 +37,8 @@ a {
   opacity: 0;
 }
 #header #gnb {
-  color: #fff;
+  color: #000;
+  transition: all 0.25s ease;
 }
 #header #gnb ul {
   display: flex;
@@ -64,4 +65,41 @@ a {
   top: 10px;
   opacity: 0;
   transition: all 0.2s ease-in-out;
+}
+
+.black #header #gnb {
+  color: #fff;
+}
+.black #main .pagination .swiper-pagination-bullet {
+  background-color: #fff;
+  color: #fff;
+}
+.black #main .pagination .swiper-pagination-bullet .tooltip {
+  background-color: #fff;
+  color: #000;
+}
+.black #main .pagination .swiper-pagination-bullet-active {
+  background-color: #f52f23;
+}
+.black #main .pagination .swiper-pagination-bullet-active .tooltip {
+  background-color: #f52f23;
+  color: #fff;
+}
+
+.red #header #gnb {
+  color: #fff;
+}
+.red #main .pagination .swiper-pagination-bullet {
+  background-color: #000;
+}
+.red #main .pagination .swiper-pagination-bullet .tooltip {
+  background-color: #fff;
+  color: #000;
+}
+.red #main .pagination .swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+.red #main .pagination .swiper-pagination-bullet-active .tooltip {
+  background-color: #fff;
+  color: #000;
 }
