@@ -63,6 +63,16 @@
   outline: none;
   transition: all 0.25s ease;
 }
+#main .pagination .swiper-pagination-bullet:before {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
 #main .pagination .swiper-pagination-bullet:last-child {
   display: none;
 }

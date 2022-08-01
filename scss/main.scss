@@ -64,6 +64,17 @@
     position: relative;
     outline: none;
     transition: all 0.25s ease;
+    &:before {
+      content: "";
+      display: block;
+      height: 30px;
+      //background-color: #00f;
+      width: 50px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
     &:last-child {
       display: none;
     }

@@ -71,7 +71,40 @@
         </section>
         <section class="section swiper-slide" id="vision">
           <div class="inner" data-swiper-parallax-scale="0.75">
-            <div class="contents" data-swiper-parallax-scale="1.25"></div>
+            <div class="contents" data-swiper-parallax-scale="1.25">
+              <div class="contentsBox">
+                <div class="titleBox">
+                  <h2>
+                    Our Value, <br />
+                    Goal and Vision
+                  </h2>
+                  <a href="">회사소개 바로가기 </a>
+                </div>
+                <ul class="list">
+                  <li>
+                    <h3>Identity</h3>
+                    <div>
+                      <strong>No.1 디지털 마케팅 플랫폼 컴퍼니</strong>
+                      최적화된 디지털 마케팅 솔루션 제공
+                    </div>
+                  </li>
+                  <li>
+                    <h3>Strength</h3>
+                    <div>
+                      <strong>데이터 기반의 오디언스 플래닝</strong>
+                      전문적인 애드테크 활용 및 데이터 매니지먼트
+                    </div>
+                  </li>
+                  <li>
+                    <h3>Challenge</h3>
+                    <div>
+                      <strong>애드테크 플랫폼의 차별화 역량 강화 </strong>
+                      빅데이터·AI 기반의 디지털 광고 플랫폼 혁신
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
         <section class="section swiper-slide" id="what">
@@ -115,24 +148,22 @@
           //invert: true,
         },
         on: {
-          slideChange: function () {
-            //console.log(this.realIndex);
-            // 올라갈때랑 내려갈때 다르다.
-            if (this.realIndex > currentIndex) {
-              console.log("내려감");
-              setTimeout(classChange, 850);
-            } else {
-              console.log("올라감");
-              setTimeout(classChange, 200);
-            }
-          },
+          slideChange: function () {},
           slideChangeTransitionEnd: function () {
-            currentIndex = this.realIndex;
+            //currentIndex = this.realIndex;
+          },
+          slidePrevTransitionStart: function () {
+            console.log("올라감");
+            setTimeout(classChange, 200);
+          },
+          slideNextTransitionStart: function () {
+            console.log("내려감");
+            setTimeout(classChange, 550);
           },
         },
       });
       function classChange() {
-        if (mainSlider.realIndex === 0 || mainSlider.realIndex === 2) {
+        if (mainSlider.realIndex === 0 || mainSlider.realIndex === 2 || mainSlider.realIndex === 5) {
           $("body").addClass("black");
         } else if (mainSlider.realIndex === 4) {
           $("body").addClass("red");
