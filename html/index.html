@@ -58,12 +58,53 @@
       </button>
     </header>
     <main id="main">
-      <section class="section" id="introduce">
-        <p>
-          DATA INTELLIGENCE NO.1
-          <strong>디지털 마케팅 플랫폼 컴퍼니</strong>
-        </p>
-      </section>
+      <div class="swiper-wrapper">
+        <section class="section swiper-slide" id="introduce">
+          <div class="inner" data-swiper-parallax-scale="0.75">
+            <div class="contents" data-swiper-parallax-scale="1.25">
+              <p>
+                DATA INTELLIGENCE NO.1
+                <strong>디지털 마케팅 플랫폼 컴퍼니</strong>
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="section swiper-slide" id="vision">
+          <div class="inner" data-swiper-parallax-scale="0.75">
+            <div class="contents" data-swiper-parallax-scale="1.25"></div>
+          </div>
+        </section>
+        <section class="section swiper-slide" id="what">
+          <div class="inner" data-swiper-parallax-scale="0.75">
+            <div class="contents" data-swiper-parallax-scale="1.25"></div>
+          </div>
+        </section>
+        <section class="section swiper-slide" id="insight">
+          <div class="inner" data-swiper-parallax-scale="0.75">
+            <div class="contents" data-swiper-parallax-scale="1.25"></div>
+          </div>
+        </section>
+        <section class="section swiper-slide" id="together">
+          <div class="inner" data-swiper-parallax-scale="0.75">
+            <div class="contents" data-swiper-parallax-scale="1.25"></div>
+          </div>
+        </section>
+        <section class="section swiper-slide" id="footer">
+          <div class="inner" data-swiper-parallax-scale="0.75">
+            <div class="contents" data-swiper-parallax-scale="1.25"></div>
+          </div>
+        </section>
+      </div>
     </main>
+    <script>
+      new Swiper("#main", {
+        direction: "vertical",
+        speed: 1000,
+        parallax: true,
+        mousewheel: {
+          //invert: true,
+        },
+      });
+    </script>
   </body>
 </html>
