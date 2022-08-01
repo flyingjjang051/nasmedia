@@ -82,14 +82,17 @@
                   <a href="" class="link">
                     <i></i>
                     <span class="txt">회사소개 바로가기</span>
+                    <span class="material-icons"> east </span>
                   </a>
                   <a href="" class="link">
                     <i></i>
                     <span class="txt">회사 고기사 맥주도 사 소개 바로가기</span>
+                    <span class="material-icons"> east </span>
                   </a>
                   <a href="" class="link">
                     <i></i>
                     <span class="txt">나스리포트 바로가기</span>
+                    <span class="material-icons"> east </span>
                   </a>
                 </div>
                 <ul class="list">
@@ -189,7 +192,7 @@
       $(".link").each(function () {
         // 만약 각각의 길이나 높이등등이 다를때는 each를 통해
         // 개별 요소로 접근을 해야 한다.
-        const end = $(this).innerWidth();
+        const end = $(this).innerWidth() - 50;
         const linkTL = gsap.timeline({ paused: true });
         const ball = $(this).find("i");
         linkTL
