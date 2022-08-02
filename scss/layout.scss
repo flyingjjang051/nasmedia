@@ -3,6 +3,11 @@
 * {
   box-sizing: border-box;
 }
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
 body {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   word-break: keep-all;
@@ -69,6 +74,28 @@ a {
       }
     }
   }
+  .language {
+    display: flex;
+    position: absolute;
+    left: 250px;
+    top: 40px;
+    font-weight: 500;
+    color: #000;
+    li {
+      margin: 0 10px;
+    }
+  }
+  .btnAll {
+    margin: 0 50px;
+    cursor: pointer;
+    span {
+      display: block;
+      width: 40px;
+      height: 3px;
+      background-color: #000;
+      margin: 10px 0;
+    }
+  }
 }
 .black {
   #header {
@@ -86,6 +113,14 @@ a {
     }
     #gnb {
       color: #fff;
+    }
+    .language {
+      color: #fff;
+    }
+    .btnAll {
+      span {
+        background-color: #fff;
+      }
     }
   }
   #main {

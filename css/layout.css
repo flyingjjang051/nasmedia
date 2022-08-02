@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 body {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   word-break: keep-all;
@@ -69,6 +75,28 @@ a {
   opacity: 0;
   transition: all 0.2s ease-in-out;
 }
+#header .language {
+  display: flex;
+  position: absolute;
+  left: 250px;
+  top: 40px;
+  font-weight: 500;
+  color: #000;
+}
+#header .language li {
+  margin: 0 10px;
+}
+#header .btnAll {
+  margin: 0 50px;
+  cursor: pointer;
+}
+#header .btnAll span {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #000;
+  margin: 10px 0;
+}
 
 .black #header #logo a img.color {
   opacity: 0;
@@ -78,6 +106,12 @@ a {
 }
 .black #header #gnb {
   color: #fff;
+}
+.black #header .language {
+  color: #fff;
+}
+.black #header .btnAll span {
+  background-color: #fff;
 }
 .black #main .pagination .swiper-pagination-bullet {
   background-color: #fff;
