@@ -144,7 +144,8 @@
               border-radius: 100%;
             }
           }
-          &:nth-child(1) {
+          &:nth-child(1),
+          &:nth-child(4) {
             .icon {
               span {
                 position: absolute;
@@ -167,7 +168,51 @@
               }
             }
           }
-
+          &:nth-child(2) {
+            .icon {
+              span {
+                width: 30px;
+                height: 30px;
+                top: -10px;
+                border-radius: 100%;
+                position: absolute;
+                &:nth-child(1) {
+                  background-color: rgba(255, 255, 255, 0.2);
+                  animation: icon0201 2s ease infinite;
+                }
+                &:nth-child(2) {
+                  background-color: $red;
+                  left: 25px;
+                  animation: icon0202 2s ease infinite;
+                }
+              }
+            }
+          }
+          &:nth-child(3) {
+            .icon {
+              span {
+                border-radius: 100%;
+                position: absolute;
+                &:nth-child(1) {
+                  background-color: rgba(255, 255, 255, 0.2);
+                  width: 40px;
+                  height: 40px;
+                  transform: translateY(-10px);
+                  //animation: icon0201 2s ease infinite;
+                }
+                &:nth-child(2) {
+                  background-color: $red;
+                  width: 14px;
+                  height: 14px;
+                  margin-top: 13px;
+                  margin-left: -7px;
+                  transform: translateY(-10px);
+                  transform-origin: 27px 50%;
+                  animation: icon0302 2s linear infinite;
+                }
+              }
+            }
+          }
           strong {
             font-size: 24px;
             font-weight: 700;
@@ -305,6 +350,40 @@
   100% {
     top: 0;
     left: 30px;
+  }
+}
+
+@keyframes icon0201 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 25px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes icon0202 {
+  0% {
+    left: 25px;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 25px;
+  }
+}
+@keyframes icon0302 {
+  0% {
+    transform: translateY(-10px) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-10px) rotate(360deg);
   }
 }
 

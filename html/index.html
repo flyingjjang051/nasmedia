@@ -342,14 +342,24 @@
         $("body").toggleClass("allMenuOpen");
       });
       const balls = $("#vision .ballBox .ball");
-      $(balls).css({
-        left: function () {
-          return Math.random() * 1000 + 100;
+      // $(balls).css({
+      //   left: function () {
+      //     return Math.random() * 1000 + 100;
+      //   },
+      // });
+      const test = {
+        speed: 0,
+      };
+      const aaa = gsap.to(test, {
+        speed: 100,
+        duration: 2,
+        onComplete: function () {
+          console.log(aaa === this);
         },
       });
       function moveBall(item) {
         $(item).css({ left: -(Math.random() * 150 + 150) }); //-150~-300
-        gsap.to(item, {
+        const myAni = gsap.to(item, {
           duration: Math.random() * 10 + 10,
           left: 1920 + Math.random() * 150,
           onComplete: function () {
@@ -360,7 +370,7 @@
           },
           onUpdate: function () {
             //console.log("aaa");
-            if (Math.random() < 0.001) {
+            if (Math.random() < 0.01) {
               this.reverse();
             }
           },
