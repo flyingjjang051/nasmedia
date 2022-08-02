@@ -164,6 +164,11 @@
                 </ul>
               </div>
             </div>
+            <div class="ballBox">
+              <div class="ball fill"></div>
+              <div class="ball line"></div>
+              <div class="ball fill"></div>
+            </div>
           </div>
         </section>
         <section class="section swiper-slide" id="what">
@@ -264,6 +269,46 @@
       $(".btnAll").on("click", function () {
         $("body").toggleClass("allMenuOpen");
       });
+      const balls = $("#vision .ballBox .ball");
+      $(balls).css({
+        left: function () {
+          return Math.random() * 1000 + 100;
+        },
+      });
+      function moveBall(item) {
+        $(item).css({ left: -(Math.random() * 150 + 150) }); //-150~-300
+        gsap.to(item, {
+          duration: Math.random() * 10 + 10,
+          left: 1920 + Math.random() * 150,
+          onComplete: function () {
+            moveBall(item);
+          },
+        });
+      }
+      // moveBall("#vision .ballBox .ball:nth-child(1)");
+      // moveBall("#vision .ballBox .ball:nth-child(2)");
+      // moveBall("#vision .ballBox .ball:nth-child(3)");
+      balls.each(function (idx, item) {
+        moveBall(item);
+      });
+      // balls.each(function (idx, item) {
+      //   $(item).css({ left: Math.random() * 1000 + 100 });
+      //   gsap.to(item, {
+      //     duration: Math.random() * 10 + 10,
+      //     left: 1920 + Math.random() * 150,
+      //     //repeat: -1,
+      //     //repeatRefresh: true,
+      //     onComplete: function () {
+      //       console.log("다시시작함");
+      //       $(item).css({ left: -150 });
+      //     },
+      //   });
+      // });
+      function plus(a = 0, b = 0) {
+        return a * 2 + b;
+      }
+      const result = plus(10, 30);
+      console.log(result);
     </script>
   </body>
 </html>

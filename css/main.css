@@ -94,6 +94,25 @@
   font-size: 24px;
   margin-bottom: 20px;
 }
+#vision .inner .ballBox {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  bottom: 0;
+  height: 150px;
+}
+#vision .inner .ballBox .ball {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  position: absolute;
+}
+#vision .inner .ballBox .ball.fill {
+  background-color: #f52f23;
+}
+#vision .inner .ballBox .ball.line {
+  border: 4px solid #f52f23;
+}
 
 #what .inner {
   background-color: #000;
