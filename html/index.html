@@ -194,6 +194,15 @@
       </div>
       <div class="pagination"></div>
     </main>
+    <svg>
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
     <script>
       let currentIndex = 0;
       const toolTips = ["Main", "Our Value", "What We Do", "Nas Report", "Let,s go Together", ""];
@@ -282,6 +291,15 @@
           left: 1920 + Math.random() * 150,
           onComplete: function () {
             moveBall(item);
+          },
+          onReverseComplete: function () {
+            moveBall(item);
+          },
+          onUpdate: function () {
+            //console.log("aaa");
+            if (Math.random() < 0.001) {
+              this.reverse();
+            }
           },
         });
       }

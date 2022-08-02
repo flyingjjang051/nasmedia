@@ -110,12 +110,14 @@
     width: 100vw;
     bottom: 0;
     height: 150px;
+    //filter: url("#gooey");
     .ball {
       width: 150px;
       height: 150px;
       border-radius: 100%;
       position: absolute;
-      //mix-blend-mode: difference;
+      mix-blend-mode: difference; // 보색대비...
+      filter: invert(100);
       &.fill {
         background-color: $red;
       }
