@@ -55,12 +55,15 @@ a {
 #header #gnb ul li a {
   font-size: 20px;
   font-weight: 700;
-  display: block;
-  padding: 50px 30px;
+  padding: 0 30px;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 #header #gnb ul li a:hover:before {
-  top: 30px;
+  top: 20px;
   opacity: 1;
 }
 #header #gnb ul li a:before {
@@ -73,6 +76,7 @@ a {
   position: absolute;
   top: 10px;
   opacity: 0;
+  left: 30px;
   transition: all 0.2s ease-in-out;
 }
 #header .language {
@@ -88,14 +92,25 @@ a {
 }
 #header .btnAll {
   margin: 0 50px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
+  position: relative;
 }
 #header .btnAll span {
   display: block;
   width: 40px;
   height: 3px;
   background-color: #000;
-  margin: 10px 0;
+  position: absolute;
+  left: 30px;
+  transition: all 0.25s ease;
+}
+#header .btnAll span:nth-child(1) {
+  top: 40px;
+}
+#header .btnAll span:nth-child(2) {
+  top: 57px;
 }
 
 .black #header #logo a img.color {
@@ -145,4 +160,51 @@ a {
 .red #main .pagination .swiper-pagination-bullet-active .tooltip {
   background-color: #fff;
   color: #000;
+}
+
+#allMenu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 98;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+#allMenu > ul {
+  display: flex;
+  width: calc(100% - 600px);
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#allMenu > ul > li > a {
+  font-size: 36px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 50px;
+}
+#allMenu > ul > li ul li {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.allMenuOpen #header .btnAll span {
+  background-color: #fff;
+}
+.allMenuOpen #header .btnAll span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 48px;
+}
+.allMenuOpen #header .btnAll span:nth-child(2) {
+  transform: rotate(-45deg);
+  top: 48px;
+}
+.allMenuOpen #allMenu {
+  opacity: 1;
+  pointer-events: auto;
 }
