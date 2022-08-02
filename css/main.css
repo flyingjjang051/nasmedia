@@ -74,6 +74,26 @@
   display: flex;
   justify-content: space-between;
 }
+#vision .inner .contentsBox .list li {
+  display: flex;
+  margin-bottom: 50px;
+  position: relative;
+  padding-left: 200px;
+}
+#vision .inner .contentsBox .list li h3 {
+  font-size: 24px;
+  color: #f52f23;
+  font-weight: 700;
+  margin-right: 100px;
+  position: absolute;
+  left: 0;
+}
+#vision .inner .contentsBox .list li div strong {
+  font-weight: 500;
+  display: block;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
 #what .inner {
   background-color: #000;

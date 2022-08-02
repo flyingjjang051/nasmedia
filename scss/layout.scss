@@ -220,9 +220,23 @@ a {
     }
   }
 }
-
 .allMenuOpen {
   #header {
+    #logo {
+      .white {
+        opacity: 1;
+      }
+      .color {
+        opacity: 0;
+      }
+    }
+    .language {
+      color: #fff;
+    }
+    #gnb {
+      opacity: 0;
+      pointer-events: none;
+    }
     .btnAll {
       span {
         background-color: #fff;

@@ -193,6 +193,19 @@ a {
   margin: 10px 0;
 }
 
+.allMenuOpen #header #logo .white {
+  opacity: 1;
+}
+.allMenuOpen #header #logo .color {
+  opacity: 0;
+}
+.allMenuOpen #header .language {
+  color: #fff;
+}
+.allMenuOpen #header #gnb {
+  opacity: 0;
+  pointer-events: none;
+}
 .allMenuOpen #header .btnAll span {
   background-color: #fff;
 }
