@@ -256,16 +256,17 @@
         </section>
       </div>
       <div class="pagination"></div>
+      <svg>
+        <defs>
+          <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
     </main>
-    <svg>
-      <defs>
-        <filter id="gooey">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
-          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="gooey" />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
+
     <script>
       let currentIndex = 0;
       const toolTips = ["Main", "Our Value", "What We Do", "Nas Report", "Let,s go Together", ""];
@@ -357,20 +358,23 @@
           console.log(aaa === this);
         },
       });
-      function moveBall(item) {
+      function moveBall(item, id) {
         $(item).css({ left: -(Math.random() * 150 + 150) }); //-150~-300
-        const myAni = gsap.to(item, {
+        $(item).attr({ "data-tween": id });
+
+        gsap.to(item, {
           duration: Math.random() * 10 + 10,
           left: 1920 + Math.random() * 150,
+          id: id,
           onComplete: function () {
-            moveBall(item);
+            moveBall(item, id);
           },
           onReverseComplete: function () {
-            moveBall(item);
+            moveBall(item, id);
           },
           onUpdate: function () {
             //console.log("aaa");
-            if (Math.random() < 0.01) {
+            if (Math.random() < 0.001) {
               this.reverse();
             }
           },
@@ -380,7 +384,12 @@
       // moveBall("#vision .ballBox .ball:nth-child(2)");
       // moveBall("#vision .ballBox .ball:nth-child(3)");
       balls.each(function (idx, item) {
-        moveBall(item);
+        moveBall(item, `tween${idx}`);
+        $(item).on("mouseenter", function () {
+          const myTween = gsap.getById($(this).data("tween"));
+          console.log($(this).data("tween"));
+          myTween.timeScale(3);
+        });
       });
       // balls.each(function (idx, item) {
       //   $(item).css({ left: Math.random() * 1000 + 100 });
